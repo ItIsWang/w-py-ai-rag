@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from src.chatbot import ChatBot
+from ai_chat_demo import ChatBot
 
 load_dotenv()
 

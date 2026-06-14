@@ -1,2 +1,1 @@
-__init__
-chatbot
+ai_chat_demo

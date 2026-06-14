@@ -1,5 +1,6 @@
 anthropic>=0.40.0
 python-dotenv>=1.0.0
+pymilvus>=2.3.0
 
 [dev]
 pytest>=8.0.0

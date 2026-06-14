@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d266089-f896-4316-9b9d-962ed7efe4d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/doc/docker_readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/milvus-docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_milvus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="0d266089-f896-4316-9b9d-962ed7efe4d0" name="Changes" comment="milvus 部署测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/dependency_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/dependency_links.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/requires.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_chat_demo.egg-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatbot.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,30 +46,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/python/workspace&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.python&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest for test.test_chatbot.TestChatBot.test_returns_string.executor": "Debug",
+    "Python.main.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/python/workspace",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\python\workspace" />
       <recent name="C:\Users\wangxiaoduo\PycharmProjects\PythonProject" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\python\workspace\src\ai_chat_demo" />
       <recent name="D:\python\workspace\doc" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.pytest for test.test_chatbot.TestChatBot.test_returns_string">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -288,8 +285,29 @@
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test.test_chatbot.TestChatBot.test_returns_string" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="workspace" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.test_chatbot.TestChatBot.test_returns_string&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test.test_chatbot.TestChatBot.test_returns_string" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -311,12 +329,36 @@
       <workItem from="1781233949162" duration="5596000" />
       <workItem from="1781333830197" duration="2552000" />
       <workItem from="1781338885504" duration="1044000" />
-      <workItem from="1781341372083" duration="2394000" />
+      <workItem from="1781341372083" duration="4984000" />
     </task>
+    <task id="LOCAL-00001" summary="milvus 部署测试">
+      <option name="closed" value="true" />
+      <created>1781403701669</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1781403701670</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="milvus 部署测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="milvus 部署测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -330,6 +372,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/workspace$pytest_for_test_test_chatbot_TestChatBot_test_returns_string.coverage" NAME="pytest for test.test_chatbot.TestChatBot.test_returns_string Coverage Results" MODIFIED="1781406003362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject$main.coverage" NAME="main Coverage Results" MODIFIED="1781239776176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
