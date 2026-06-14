@@ -1,0 +1,110 @@
+docker-compose.yml
+
+from pymilvus import connections, Collection, FieldSchema, CollectionSchema, DataType, utility
+
+# 连接 Milvus
+def connect_milvus():
+    connections.connect(
+        alias="default",
+        host='localhost',
+        port='19530'
+    )
+    print("✅ Milvus 连接成功！")
+
+    # 列出所有集合
+    collections = utility.list_collections()
+    print(f"现有集合: {collections}")
+    return True
+
+# 创建测试集合
+def create_test_collection():
+    # 定义字段
+    fields = [
+        FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=False),
+        FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=128),  # 向量维度
+        FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=500),
+    ]
+
+    # 创建集合 schema
+    schema = CollectionSchema(fields, description="测试集合")
+
+    # 创建集合
+    collection_name = "test_collection"
+    if utility.has_collection(collection_name):
+        utility.drop_collection(collection_name)
+
+    collection = Collection(name=collection_name, schema=schema)
+
+    # 创建索引
+    index_params = {
+        "metric_type": "L2",
+        "index_type": "IVF_FLAT",
+        "params": {"nlist": 128}
+    }
+    collection.create_index(field_name="vector", index_params=index_params)
+    print(f"✅ 集合 '{collection_name}' 创建成功")
+    return collection
+
+# 插入测试数据
+def insert_test_data(collection):
+    import random
+
+    entities = [
+        [i for i in range(100)],  # id
+        [[random.random() for _ in range(128)] for _ in range(100)],  # vectors
+        [f"text_{i}" for i in range(100)],  # text
+    ]
+
+    insert_result = collection.insert(entities)
+    collection.flush()
+    print(f"✅ 插入 {collection.num_entities} 条数据")
+    return insert_result
+
+# 搜索测试
+def search_test(collection):
+    import random
+
+    # 加载集合到内存
+    collection.load()
+
+    # 生成随机搜索向量
+    search_vectors = [[random.random() for _ in range(128)]]
+
+    # 搜索参数
+    search_params = {"metric_type": "L2", "params": {"nprobe": 10}}
+
+    # 执行搜索
+    results = collection.search(
+        data=search_vectors,
+        anns_field="vector",
+        param=search_params,
+        limit=5,
+        output_fields=["text"]
+    )
+
+    # 打印结果
+    for hits in results:
+        for hit in hits:
+            print(f"ID: {hit.id}, 距离: {hit.distance}, 文本: {hit.entity.get('text')}")
+
+    print("✅ 搜索完成")
+
+if __name__ == "__main__":
+    try:
+        # 1. 连接
+        connect_milvus()
+
+        # 2. 创建测试集合
+        collection = create_test_collection()
+
+        # 3. 插入数据
+        insert_test_data(collection)
+
+        # 4. 搜索测试
+        search_test(collection)
+
+    except Exception as e:
+        print(f"❌ 错误: {e}")
+    finally:
+        # 断开连接
+        connections.disconnect("default")
